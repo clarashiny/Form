@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form_Submission</title>
+    <style>
+        .img1{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="success.html" name="myform" method="post" onsubmit="return Validate()">
+        <div class="img1con">
+            <img src="https://thumbs.dreamstime.com/b/login-icon-button-vector-illustration-isolated-white-background-126999474.jpg" alt="not found" class="img1"/>
+        </div>
+        <div class="container">
+            <label for="name">USer name</label>
+            <input type="text" id="un" placeholder="Username" name="username" value=""/><br>
+            <label for="pwd">Password</label>
+            <input type="password" placeholder="Password" id="pw" name="pwd" value=""/><br>
+            <input type="checkbox" name="rememberme">Remember Me<br>
+            <input type="submit" class="btn" value="Login"/>
+        </div>
+        <div class="footer">
+            <button class="cbtn" type="button">Cancel</button>
+            <span class="spn">Forget<a href="#">Password</a></span>
+        </div>
+    </form>
+    <script>
+        function Validate(){
+            // const x=document.getElementById("un").value;
+            // const y=document.getElementById("pw").value;
+            const x=document.myform.username.value;
+            const y=document.myform.pwd.value;
+            const res=[];
+            
+            if(x=="" || x==null)
+        {
+            alert("Name is required");
+            return false;
+        }
+        // if(x.length>=3 && x.length<=10)
+        // {
+
+        // }
+        if(y.length<6)
+        {
+            alert("Pwd should be min 6");
+            return false;
+
+        }
+        //return true;
+        const result=[...res,x,y]
+        console.log(result);
+        
+
+        }
+    </script>
+</body>
+</html>
